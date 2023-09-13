@@ -1,0 +1,17 @@
+name: Execute .exe File
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Execute .exe file
+        run: demo/Calculator.exe
