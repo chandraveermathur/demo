@@ -15,7 +15,6 @@ jobs:
 
     - name: Run Calculator.exe
       run: |
-        # cd demo
         chmod +x Calculator.exe
         ./Calculator.exe
 
