@@ -1,17 +1,20 @@
-name: Execute .exe File
+name: Execute Exe File
 
 on:
   push:
     branches:
-      - main
+      - main  # Adjust this branch as needed
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
+    - name: Checkout Repository
+      uses: actions/checkout@v2
 
-      - name: Execute .exe file
-        run: demo/Calculator.exe
+    - name: Run .exe File
+      run: |
+        chmod +x your-exe-file.exe  # Make the .exe file executable (Linux)
+        ./your-exe-file.exe         # Run the .exe file
+
