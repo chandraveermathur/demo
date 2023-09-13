@@ -1,9 +1,9 @@
-name: Execute Exe File
+name: Execute Calculator.exe
 
 on:
   push:
     branches:
-      - main  # Adjust this branch as needed
+      - main
 
 jobs:
   build:
@@ -13,8 +13,9 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v2
 
-    - name: Run .exe File
+    - name: Run Calculator.exe
       run: |
-        chmod +x Calculator.exe  # Make the .exe file executable (Linux)
-        ./your-exe-file.exe         # Run the .exe file
+        cd demo
+        chmod +x Calculator.exe
+        ./Calculator.exe
 
