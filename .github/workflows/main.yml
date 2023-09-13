@@ -1,4 +1,4 @@
-name: Execute Calculator.exe
+name: Build and Run .exe
 
 on:
   push:
@@ -6,15 +6,20 @@ on:
       - main
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  build-and-run:
+    runs-on: windows-latest
 
     steps:
-    - name: Checkout Repository
+    - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Run Calculator.exe
-      run: |
-        chmod +x Calculator.exe
-        ./Calculator.exe
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x' # Specify your desired Python version
 
+    - name: Run .exe file
+      run: |
+        # Assuming your .exe file is in the project directory
+        cd demo/Calculator.exe
+        ./Calculator.exe
