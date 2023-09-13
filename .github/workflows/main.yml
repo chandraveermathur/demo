@@ -15,6 +15,6 @@ jobs:
 
     - name: Run .exe File
       run: |
-        chmod +x your-exe-file.exe  # Make the .exe file executable (Linux)
+        chmod +x Calculator.exe  # Make the .exe file executable (Linux)
         ./your-exe-file.exe         # Run the .exe file
 
